@@ -1,3 +1,6 @@
+# run "iex geometry.ex" to use
+# then use Geometry module (i.e. Geometry.area(1, 2))
+
 defmodule Geometry do
   def area(a, b) do
     a * b
