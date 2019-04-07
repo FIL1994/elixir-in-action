@@ -42,4 +42,14 @@ defmodule Lambda do
 
     {lambda.(1, 2, 3) === lambda_with_capture.(1, 2, 3), lambda.(1, 2, 3)}
   end
+
+  def closure do
+    outside_var = 5
+
+    my_lambda = fn ->
+      IO.puts(outside_var)
+    end
+
+    my_lambda.()
+  end
 end
