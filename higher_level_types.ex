@@ -49,3 +49,26 @@ defmodule MapSetExample do
     Enum.each(add(), &IO.puts/1)
   end
 end
+
+defmodule TimeAndDates do
+  def date do
+    date = ~D[2018-01-31]
+    {date.year, date.month}
+  end
+
+  def time do
+    time = ~T[11:59:12.00007]
+    {time.hour, time.minute}
+  end
+
+  def naive_date_time do
+    datetime = ~N[2018-01-31 11:59:12.00007]
+    # {datetime.year, datetime.hour}
+    datetime
+  end
+
+  def date_time do
+    datetime = DateTime.from_naive!(naive_date_time(), "Etc/UTC")
+    {datetime.year, datetime.hour, datetime.time_zone}
+  end
+end
